@@ -45,5 +45,53 @@ namespace UnitTestProject1
             int size = tree.Size();
             Assert.AreEqual(13, size);
         }
+
+        /// <summary>
+        /// Searchelements the in the tree.
+        /// </summary>
+        [TestMethod]
+        public void SearchelementInTheTree()
+        {
+            tree.Add(56);
+            tree.Add(30);
+            tree.Add(70);
+            tree.Add(22);
+            tree.Add(40);
+            tree.Add(60);
+            tree.Add(95);
+            tree.Add(11);
+            tree.Add(3);
+            tree.Add(16);
+            tree.Add(65);
+            tree.Add(63);
+            tree.Add(67);
+            bool searchResult=tree.Search(67);
+            Assert.IsTrue(searchResult);
+
+        }
+
+        /// <summary>
+        /// Seaches the not present element inthe tree shoul return false.
+        /// </summary>
+        [TestMethod]
+        public void SearchNotPresentElementIntheTreeShoulReturnFalse()
+        {
+            tree.Add(56);
+            tree.Add(30);
+            tree.Add(70);
+            tree.Add(22);
+            tree.Add(40);
+            tree.Add(60);
+            tree.Add(95);
+            tree.Add(11);
+            tree.Add(3);
+            tree.Add(16);
+            tree.Add(65);
+            tree.Add(63);
+            tree.Add(67);
+            bool searchResult = tree.Search(100);
+            Assert.IsFalse(searchResult);
+
+        }
     }
 }
